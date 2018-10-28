@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; CHARSET=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outlook Web Access (OWA) | Colin Wilson</title>
+    <meta content="NOINDEX, NOFOLLOW" name="Robots">
+    <!--<link rel="shortcut icon" href="/lm_auth_proxy?LMimage=favicon.ico" type="image/x-icon">-->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!--<link href="/lm_auth_proxy?LMimage=kmgstyle.css" type="text/css" rel="stylesheet">-->
+    <link href="bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="kmgstyle.css" type="text/css" rel="stylesheet">
+    <link href="colinwilson.css" type="text/css" rel="stylesheet">
+<script>
+var xx_msg10 = "Login Failed - The security service has blocked your request. Please contact your System Administrator.<br><br>";
+var xx_msg11 = "Login Failed - Please make sure that your Username and Password are correct, and then try again.<br><br>";
+var xx_msg15 = "Enter New Passphrase:";
+var xx_msg17 = "Re-Enter Pin:";
+</script>
+<script src="lm_sso.js"></script>
+</head>
+<body style="font-size:100%">
+<div class="form-body" class="container-fluid">
+  <div class="website-logo">
+    <a href="https://colinwilson.uk">
+      <div class="logo">
+        <img class="logo-size" src="logo-light.png" alt="">
+      </div>
+    </a>
+  </div>
+  <div class="row">
+    <div class="form-holder">
+      <div class="form-content">
+        <div class="form-items">
+          <h3>Remote Access</h3>
+          <noscript>
+            <div id="dvErr">
+                <p class="error"><img  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAKlBMVEVMaXH//wD/wBL/wBH/wBH/vRT/wBH/wBH/wRH/wBL/wBH/wA//vw//wBHlyME2AAAADXRSTlMAAXD25iazgLVIf0RPR9lGhAAAAF1JREFUeNplj0sSwCAIQxERv9z/ulXQtg7ZqG8MCbCUMhNxTmAKGEUVMei7yKuyCOq1Vj1w+u0/gLkSZPkDacA3YKAbkAPTslO2xYZ+aie29x17io1hxVx1v5xb/wGbKwjD8MWvlgAAAABJRU5ErkJggg==" alt="alert icon" /> In order to log on javascript must be enabled in your browser.</p>
+            </div>
+          </noscript>
+          <p id="ssomsg"></p>
+          <div class="page-links">
+            <a href="/owa" class="active">Sign In</a>
+          </div>
+          <p class="error" id="badmsg"></p>
+          <form action="/lm_auth_proxy?LMLogon" method="post" id="logonForm" autocomplete="off" onSubmit="return save_username(this.username, this.pubpriv);">
+            <input type="hidden" id="curl" name="curl" value="">
+            <input type="hidden" id="curlid" name="curlid" value="">
+            <input type="hidden" id="curlmode" name="curlmode" value="0">
+
+              <div class="mb-1" id="nopub">
+                  <input class="form-control" type=radio id=pubr name="pubpriv" value=0 checked="checked">
+                  <label for="pubr">This is a public or shared computer</label>
+              </div>
+              <div class="mb-3" id="nopub1">
+                  <input type=radio id=pubp name="pubpriv" value=1>
+                  <label for="pubp">This is a private computer</label>
+              </div>
+            <div id="userid">
+              <input class="form-control" type="text" id="username" name="username" placeholder="Network User ID" required>
+            </div>
+            <div id="passid">
+              <input class="form-control" type="password" id="password" name="password" placeholder="Password" required>
+            </div>
+            <div class="form-button">
+              <button id="submit" name="submit" type="submit" class="ibtn">Log On</button>
+            </div>
+          </form>
+          <div>
+            <p style="font-size:13px;font-weight:500;margin-bottom:5px">For Authorized Users Only</p>
+            <p style="font-size:10px;line-height:13px">This system is for the use of authorized users only. This system and all content contained therein constitute
+                private property and no right of individual privacy is accorded, intended, or may be expected. The right to monitor,
+                change, record, disclose, use or terminate any activity or content on this system at any time and for any purpose is
+                expressly reserved. Non-authorized persons accessing this computer system or those improperly using the system are
+                subject to all appropriate and available actions. By accessing and using this system, you are consenting to the
+                monitoring, recording, and disclosure of your activities, including, if involving any possible violation of law,
+                disclosure to appropriate authorities.</p>
+
+          </div>
+          <div class="other-links">
+            <span>© 2018 Colin Wilson</span><a href="#">Terms of Service</a><a href="#">Privacy Policy</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="img-holder">
+      <div class="bg"></div>
+      <div class="info-holder">
+        <!--<img src="images/graphic2.svg" alt="">-->
+        <!--<h3>For Authorized Users Only</h3>
+        <p>This system is for the use of authorized users only. This system and all content contained therein constitute
+          private property and no right of individual privacy is accorded, intended, or may be expected. The right to monitor,
+          change, record, disclose, use or terminate any activity or content on this system at any time and for any purpose is
+          expressly reserved. Non-authorized persons accessing this computer system or those improperly using the system are
+          subject to all appropriate and available actions. By accessing and using this system, you are consenting to the
+          monitoring, recording, and disclosure of your activities, including, if involving any possible violation of law,
+          disclosure to appropriate authorities.</p>-->
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

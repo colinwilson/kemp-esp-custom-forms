@@ -1,0 +1,18 @@
+# Default manifest of all files that are part of the logon
+# screens.
+#ident "$Id: EN-Colin-Wilson.manifest 16042 2018-02-28 10:16:37Z phil $ phil"
+#
+# Format is "filename filetype".
+# The first file is the initial login screen
+# The second file is the logout screen.
+#
+
+lm_initial.html
+lm_logout.html Text/html
+lm_sso.js
+favicon.ico
+bootstrap.min.css
+kmgstyle.css
+colinwilson.css
+logo-light.png
+INFO
