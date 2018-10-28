@@ -14,6 +14,10 @@
 /* -----------------------------------
     1 - General Styles
 ------------------------------------*/
+body {
+    background-color: #1c91f2;
+}
+
 .website-logo {
     display: inline-block;
     top: 50px;
@@ -68,6 +72,15 @@
     margin-right: 550px;
 }
 
+.form-holder .bg {
+    background: url("./bg.png") no-repeat;
+    position: absolute;
+    opacity: 0.4;
+    background-size: cover;
+    height: 100%;
+    width: 50%;
+}
+
 .form-holder .form-content ::-webkit-input-placeholder {
     color: #526489;
 }
@@ -98,10 +111,6 @@
 
 .form-control :-ms-input-placeholder {
     color: #526489;
-}
-
-.form-content {
-    background-color: #1c91f2;
 }
 
 .form-content .form-group {
@@ -234,6 +243,10 @@
 @media (max-width: 992px) {
     .form-holder {
         margin-right: 0;
+    }
+
+    .form-holder .bg {
+        width: 100%;
     }
 
     .website-logo {
