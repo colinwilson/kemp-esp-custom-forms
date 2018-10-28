@@ -78,7 +78,7 @@ body {
     opacity: 0.4;
     background-size: cover;
     height: 100%;
-    width: 50%x;
+    width: 50%;
 }
 
 .form-holder .form-content ::-webkit-input-placeholder {
