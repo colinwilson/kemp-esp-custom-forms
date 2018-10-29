@@ -37,9 +37,12 @@ var xx_msg17 = "Re-Enter Pin:";
                 <p class="error"><img  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAKlBMVEVMaXH//wD/wBL/wBH/wBH/vRT/wBH/wBH/wRH/wBL/wBH/wA//vw//wBHlyME2AAAADXRSTlMAAXD25iazgLVIf0RPR9lGhAAAAF1JREFUeNplj0sSwCAIQxERv9z/ulXQtg7ZqG8MCbCUMhNxTmAKGEUVMei7yKuyCOq1Vj1w+u0/gLkSZPkDacA3YKAbkAPTslO2xYZ+aie29x17io1hxVx1v5xb/wGbKwjD8MWvlgAAAABJRU5ErkJggg==" alt="alert icon" /> In order to log on javascript must be enabled in your browser.</p>
             </div>
           </noscript>
-          <p id="ssomsg"></p>
+          <p id="ssomsg">Welcome to Outlook Web Access</p>
           <div class="page-links">
             <a href="/owa" class="active">Sign In</a>
+          </div>
+          <div id="reset_pass" style="display:none" class="form-button">
+            <p class="error" id="reset_msg"></p><a class="ibtn" role="button" id="reset_link" href="#">Click Here</a>
           </div>
           <p class="error" id="badmsg"></p>
           <form action="/lm_auth_proxy?LMLogon" method="post" id="logonForm" autocomplete="off" onSubmit="return save_username(this.username, this.pubpriv);">

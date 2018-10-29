@@ -42,6 +42,9 @@ var xx_msg17 = "Re-Enter Pin:";
           <div class="page-links">
               <a href="/owa" class="active">Sign In</a>
           </div>
+          <div id="reset_pass" style="display:none" class="form-button">
+            <p class="error" id="reset_msg"></p><a class="ibtn" role="button" id="reset_link" href="#">Click Here</a>
+          </div>
           <p class="error" id="badmsg"></p>
           <form action="/lm_auth_proxy?LMLogon" method="post" id="logonForm" autocomplete="off" onSubmit="return save_username(this.username, this.pubpriv);">
             <input type="hidden" id="curl" name="curl" value="">

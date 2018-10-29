@@ -3,10 +3,9 @@
  * Theme URI: https://github.com/colinwilson/kemp-lm-sso-custom-image-set-templates
  * Author: Colin Wilson
  * Author URI: https://colinwilson.uk
- * Description: A Bootstrap Responsive HTML5 Template
- * Version: 1.0.1
+ * Description: A Bootstrap Responsive HTML5 Custom Authentication Form for KEMP's Extended Security Pack (ESP)
+ * Version: 1.0.3
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- * Bootstrap v4.1 (http://getbootstrap.com)
  * Copyright 2018 Colin Wilson.
  -------------------------------------------------------------------*/
 /*------------------------------------------------------------------
@@ -45,7 +44,8 @@ html, body {
 
 .error {
     color:#ffbf18 !important;
-    margin-bottom: 5px !important;
+    font-weight: 400 !important;
+    margin-bottom: 10px !important;
 }
 
 .website-logo {
