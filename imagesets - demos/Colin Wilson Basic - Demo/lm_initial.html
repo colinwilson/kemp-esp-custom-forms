@@ -1,0 +1,166 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; CHARSET=utf-8">
+    <title>KEMP Login Screen</title>
+    <meta content="NOINDEX, NOFOLLOW" name="Robots">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link href="kmgstyle.css" type="text/css" rel="stylesheet">
+<style type="text/css">
+body
+{
+        font-family:Tahoma,Arial,Helvetica;
+        font-size:70%;
+}
+input, button
+{
+        font-family:Tahoma,Arial,Helvetica;
+}
+
+.mid
+{
+        font-size:70%;
+}
+
+input, button, label, table
+{
+        font-size:100%;
+}
+</style>
+<script>
+var xx_msg10 = "Login Failed - The security service has blocked your request. Please contact your System Administrator.<br><br>";
+var xx_msg11 = "Login Failed - Please make sure that your Username and Password are correct, and then try again.<br><br>";
+var xx_msg15 = "Enter New Passphrase:";
+var xx_msg17 = "Re-Enter Pin:";
+</script>
+<script type="text/javascript" src="lm_sso.js"></script>
+</head>
+<body style="font-size:100%" onload='sso_setup("%s", "%s", "%s", %s, %s, %s);'>
+<noscript>
+	<div id="dvErr">
+		<table cellpadding="0" cellspacing="0">
+		<tr>
+			<td><img src="kmgerror.gif" alt=""></td>
+			<td style="width:100%">To use LoadMaster ESP Login, javascript must be enabled in your browser.</td>
+		</tr>
+		</table>
+	</div>
+</noscript>
+<form action="/lm_auth_proxy?LMLogon" method="post" id="logonForm" autocomplete="off" onSubmit="return save_username(this.username, this.pubpriv);">
+<input type="hidden" id="curl" name="curl" value="">
+<input type="hidden" id="curlid" name="curlid" value="">
+<input type="hidden" id="curlmode" name="curlmode" value="0">
+<table align="center" id="tblMain" cellpadding=0 cellspacing=0>
+	<tr>
+		<td colspan=3>
+		<table cellspacing=0 cellpadding=0 class="tblLgn">
+		<tr><td><img src="espblank.gif"></td>
+		</tr>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td id="mdLft">&nbsp;</td>
+		<td id="mdMid">
+        <table class="mid">
+        <tbody>
+        <tr>
+          <td class="align">
+              <table cellpadding="0" cellspacing="0">
+               <tr><td id="ssomsg"></td></tr>
+              </table>
+          </td>
+        </tr>
+        <tr id="reset_pass" style="display:none">
+          <td class="align">
+              <table cellpadding="0" cellspacing="0">
+               <tr><td>
+		<span id="reset_msg">&nbsp;</span>&nbsp;
+		<a id="reset_link" href="#">Click Here</a>
+		</td></tr>
+              </table>
+          </td>
+        </tr>
+        <tr>
+          <td class="align">
+              <table cellpadding="0" cellspacing="0">
+               <tr><td class="wrng" id="badmsg"></td></tr>
+              </table>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <table cellspacing="0" cellpadding="0">
+              <colgroup>
+              <col class="nowrap">
+              <col class="w100">
+              <col>
+              <tbody>
+<tr id="nopub"><td class="nowrap">
+<input type=radio id=pubr name="pubpriv" value=0 checked="checked">
+</td><td><label for="pubr">This is a public or shared computer</label></td>
+</tr>
+<tr id="nopub1"><td class="nowrap">
+<input type=radio id=pubp name="pubpriv" value=1>
+</td><td><label for="pubp">This is a private computer</label></td>
+</tr>
+                  <tr id="userid">
+                    <td class="nowrap"><label for="username">Username:</label></td>
+                    <td class="txtpad">
+                        <input class="txt" id="username" name="username" type="text"/>
+                    </td>
+                  </tr>
+                  <tr id="passid">
+                    <td class="nowrap"><label for="password">Password:</label></td>
+                    <td class="txtpad">
+                        <input class="txt" id="password" type="password" name="password" autocomplete=off required maxlength=128 />
+                    </td>
+                  </tr>
+                  <tr id="pascid" style="display:none;">
+                    <td class="nowrap"><label for="passphrase" id="passlabel">Passphrase:</label></td>
+                    <td class="txtpad">
+                        <input class="txt" id="passphrase" type="password" name="passphrase" autocomplete=off maxlength=64 />
+                    </td>
+                  </tr>
+                  <tr id="pinid" style="display:none;">
+                    <td class="nowrap"><label for="pin" id="pinlabel">Pin:</label></td>
+                    <td class="txtpad">
+                        <input class="txt" id="pin" type="password" name="pin" autocomplete=off maxlength=64 />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="nowrap">&nbsp;</td>
+                    <td class="txtpad" colspan="2">
+                        <input type="submit" value="Log On" name="submit" />
+                    </td>
+                  </tr>
+              </tbody>
+             </table>
+          </td>
+        </tr>
+       </tbody>
+      </table>
+		<table class="mid tblConn">
+			<tr>
+				<td class="tdConn" style="padding-top:0px;">Secured by KEMP LoadMaster</td>
+			</tr>
+			<tr>
+				<td style="font-size:80%;">&copy; 2002-2018 KEMP Technologies Inc. All rights reserved.</td>
+			</tr>
+		</table>
+	</td>
+	<td id="mdRt">&nbsp;</td>
+	</tr>
+	<tr>
+		<td colspan=3>
+		<table cellspacing=0 cellpadding=0 class="tblLgn">
+		<tr>
+		<td><img src="espbottom.gif" alt=""></td>
+		</tr></table>
+		</td>
+	</tr>
+ </tbody>
+</table>
+</form>
+</body>
+</html>
