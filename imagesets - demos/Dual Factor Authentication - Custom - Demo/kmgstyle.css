@@ -15,7 +15,7 @@ img
 }
 .nonMSIE
 {
-	padding: 3px 3px; 
+	padding: 3px 3px;
 	margin: 2px 2px;
 }
 table#tblMain
@@ -28,7 +28,7 @@ table.mid
 	width: 385px;
 	border-collapse:collapse;
 	padding:0px;
-	color:#444444; 
+	color:#444444;
 }
 table.tblConn
 {
@@ -48,18 +48,18 @@ td.tdConn
 }
 td#mdLft
 {
-	background: url("/lm_auth_proxy?LMimage=kmgleft.gif") repeat-y;
+	background: url("kmgleft.gif") repeat-y;
 	width:15px;
 }
 td#mdRt
 {
-	background: url("/lm_auth_proxy?LMimage=kmgright.gif") repeat-y;
+	background: url("kmgright.gif") repeat-y;
 	width:15px;
 }
 td#mdMid
 {
 	padding:0px 45px;
-	background: #ffffff; 
+	background: #ffffff;
 	vertical-align: top;
 }
 td .txtpad
@@ -76,7 +76,7 @@ select, .txt
 	color:#000000;
 	background-color:#fff3c0;
 	border: 1px solid #a4a4a4;
-	margin: 3px 6px; 
+	margin: 3px 6px;
 }
 .txt
 {
@@ -89,7 +89,7 @@ select, .txt
 }
 hr
 {
-	height: 0px; 
+	height: 0px;
 	visibility: hidden;
 }
 .l
@@ -211,8 +211,8 @@ td.kmgTR, td.kmgBR
 }
 table.tblLgn
 {
-	padding: 0px; 
-	margin: 0px; 
+	padding: 0px;
+	margin: 0px;
 	border-collapse:collapse;
 	width: 100%;
 }

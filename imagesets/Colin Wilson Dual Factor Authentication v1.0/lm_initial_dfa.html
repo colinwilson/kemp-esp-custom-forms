@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="/lm_auth_proxy?LMimage=favicon.ico" type="image/x-icon">
     <link href="/lm_auth_proxy?LMimage=bootstrap.min.css" type="text/css" rel="stylesheet">
     <link href="/lm_auth_proxy?LMimage=kmgstyle.css" type="text/css" rel="stylesheet">
-    <link href="/lm_auth_proxy?LMimage=colinwilson.css" type="text/css" rel="stylesheet">
+    <link href="/lm_auth_proxy?LMimage=colinwilson_dfa.css" type="text/css" rel="stylesheet">
 <script>
 var xx_msg10 = "Login Failed - The security service has blocked your request. Please contact your System Administrator.<br><br>";
 var xx_msg11 = "Login Failed - Please make sure that your Username and Password are correct, and then try again.<br><br>";
@@ -46,7 +46,7 @@ var xx_msg17 = "Re-Enter Pin:";
             <p class="error" id="reset_msg"></p><a class="ibtn" role="button" id="reset_link" href="#">Click Here</a>
           </div>
           <p class="error" id="badmsg"></p>
-          <form action="/lm_auth_proxy?LMLogon" method="post" id="logonForm" autocomplete="off" onSubmit="return save_username(this.username, this.pubpriv);">
+          <form class="mb-5" action="/lm_auth_proxy?LMLogon" method="post" id="logonForm" autocomplete="off" onSubmit="return save_username(this.username, this.pubpriv);">
             <input type="hidden" id="curl" name="curl" value="">
             <input type="hidden" id="curlid" name="curlid" value="">
             <input type="hidden" id="curlmode" name="curlmode" value="0">
@@ -58,17 +58,19 @@ var xx_msg17 = "Re-Enter Pin:";
                 <input type=radio id=pubp name="pubpriv" value=1>
                 <label for="pubp">This is a private computer</label>
             </div>
+            <h6 class="mb-2 text-white">Remote Access Credentials</h6>
+            <div id="duserid">
+              <input class="form-control" type="text" id="dusername" name="dusername" placeholder="Network User ID" />
+            </div>
+            <div id="dpasscodeid">
+              <input class="form-control" type="password" id="dpasscode" name="dpasscode" placeholder="Passcode" autocomplete=off required maxlength=128 />
+            </div>
+            <h6 class="mb-2 text-white">Internal Credentials</h6>
             <div id="userid">
-              <input class="form-control" type="text" id="username" name="username" placeholder="Network User ID" required>
+              <input class="form-control" type="text" id="username" name="username" placeholder="Internal Username" required>
             </div>
             <div id="passid">
-              <input class="form-control" type="password" id="password" name="password" placeholder="Password" required>
-            </div>
-            <div id="pascid" style="display:none">
-              <input class="txt" id="passphrase" type="password" name="passphrase" placeholder="Passphrase" autocomplete=off maxlength=64 />
-            </div>
-            <div id="pinid" style="display:none">
-              <input class="txt" id="pin" type="password" name="pin" placeholder="Pin" autocomplete=off maxlength=64 />
+              <input class="form-control" type="password" id="password" name="password" placeholder="Internal Password" required maxlength=128 />
             </div>
             <div class="form-button">
               <button id="submit" name="submit" type="submit" class="ibtn">Log On</button>

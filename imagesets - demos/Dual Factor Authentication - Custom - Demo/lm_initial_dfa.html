@@ -4,8 +4,8 @@
     <meta http-equiv="Content-Type" content="text/html; CHARSET=utf-8">
     <title>KEMP Login Screen</title>
     <meta content="NOINDEX, NOFOLLOW" name="Robots">
-    <link rel="shortcut icon" href="/lm_auth_proxy?LMimage=favicon.ico" type="image/x-icon">
-    <link href="/lm_auth_proxy?LMimage=kmgstyle.css" type="text/css" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link href="kmgstyle.css" type="text/css" rel="stylesheet">
 <style type="text/css">
 body
 {
@@ -26,27 +26,26 @@ input, button, label, table
 {
         font-size:100%;
 }
+
 </style>
 <script>
 var xx_msg10 = "Login Failed - The security service has blocked your request. Please contact your System Administrator.<br><br>";
-var xx_msg11 = "Login Failed - Please make sure that your Username and Password are correct, and then try again.<br><br>";
-var xx_msg15 = "Enter New Passphrase:";
-var xx_msg17 = "Re-Enter Pin:";
+var xx_msg11 = "Login Failed - Please make sure that both your remote and internal credentials are correct, and then try again.<br><br>";
 </script>
-<script type="text/javascript" src="/lm_auth_proxy?LMimage=lm_sso.js"></script>
+<script type="text/javascript" src="lm_sso.js"></script>
 </head>
 <body style="font-size:100%" onload='sso_setup("%s", "%s", "%s", %s, %s, %s);'>
 <noscript>
 	<div id="dvErr">
 		<table cellpadding="0" cellspacing="0">
 		<tr>
-			<td><img src="/lm_auth_proxy?LMimage=kmgerror.gif" alt=""></td>
+			<td><img src="kmgerror.gif" alt=""></td>
 			<td style="width:100%">To use LoadMaster ESP Login, javascript must be enabled in your browser.</td>
 		</tr>
 		</table>
 	</div>
 </noscript>
-<form action="/lm_auth_proxy?LMLogon" method="post" id="logonForm" autocomplete="off" onSubmit="return save_username(this.username, this.pubpriv);">
+<form action="/lm_auth_proxy?LMLogon" method="post" id="logonForm" autocomplete="off" onSubmit="return save_usernames_dfa(this.dusername, this.username, this.pubpriv);">
 <input type="hidden" id="curl" name="curl" value="">
 <input type="hidden" id="curlid" name="curlid" value="">
 <input type="hidden" id="curlmode" name="curlmode" value="0">
@@ -54,7 +53,7 @@ var xx_msg17 = "Re-Enter Pin:";
 	<tr>
 		<td colspan=3>
 		<table cellspacing=0 cellpadding=0 class="tblLgn">
-		<tr><td><img src="/lm_auth_proxy?LMimage=espblank.gif"></td>
+		<tr><td><img src="esptop.gif"></td>
 		</tr>
 		</table>
 		</td>
@@ -104,36 +103,48 @@ var xx_msg17 = "Re-Enter Pin:";
 <input type=radio id=pubp name="pubpriv" value=1>
 </td><td><label for="pubp">This is a private computer</label></td>
 </tr>
+                  <tr id="remotecredsid">
+                    <td class="nowrap"><label for="remotecreds"><b>Remote Credentials</b></label></td>
+                  </tr>
+
+                  <tr id="duserid">
+                    <td class="nowrap"><label for="dusername">Username:</label></td>
+                    <td class="txtpad">
+                        <input class="txt" id="dusername" name="dusername" type="text"/>
+                    </td>
+                  </tr>
+
+                  <tr id="dpasscodeid">
+                    <td class="nowrap"><label for="dpasscode">Passcode:</label></td>
+                    <td class="txtpad">
+                        <input class="txt" id="dpasscode" type="password" name="dpasscode" autocomplete=off required maxlength=128 />
+                    </td>
+                  </tr>
+
+                  <tr id="interncredsid">
+                    <td class="nowrap"><label for="interncreds"><b>Internal Credentials</b></label></td>
+                  </tr>
+
                   <tr id="userid">
-                    <td class="nowrap"><label for="username">Username:</label></td>
+                    <td class="nowrap"><label for="username">Internal Username:</label></td>
                     <td class="txtpad">
                         <input class="txt" id="username" name="username" type="text"/>
                     </td>
                   </tr>
                   <tr id="passid">
-                    <td class="nowrap"><label for="password">Password:</label></td>
+                    <td class="nowrap"><label for="password">Internal Password:</label></td>
                     <td class="txtpad">
                         <input class="txt" id="password" type="password" name="password" autocomplete=off required maxlength=128 />
                     </td>
                   </tr>
-                  <tr id="pascid" style="display:none;">
-                    <td class="nowrap"><label for="passphrase" id="passlabel">Passphrase:</label></td>
-                    <td class="txtpad">
-                        <input class="txt" id="passphrase" type="password" name="passphrase" autocomplete=off maxlength=64 />
-                    </td>
-                  </tr>
-                  <tr id="pinid" style="display:none;">
-                    <td class="nowrap"><label for="pin" id="pinlabel">Pin:</label></td>
-                    <td class="txtpad">
-                        <input class="txt" id="pin" type="password" name="pin" autocomplete=off maxlength=64 />
-                    </td>
-                  </tr>
+
                   <tr>
                     <td class="nowrap">&nbsp;</td>
                     <td class="txtpad" colspan="2">
                         <input type="submit" value="Log On" name="submit" />
                     </td>
                   </tr>
+
               </tbody>
              </table>
           </td>
@@ -155,7 +166,7 @@ var xx_msg17 = "Re-Enter Pin:";
 		<td colspan=3>
 		<table cellspacing=0 cellpadding=0 class="tblLgn">
 		<tr>
-		<td><img src="/lm_auth_proxy?LMimage=espbottom.gif" alt=""></td>
+		<td><img src="espbottom.gif" alt=""></td>
 		</tr></table>
 		</td>
 	</tr>
