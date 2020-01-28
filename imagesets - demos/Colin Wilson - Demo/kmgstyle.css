@@ -26,10 +26,6 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-html, body {
-    height: 100%;
-}
-
 .form-body {
     background-color: #0093FF;
     height: 100%;

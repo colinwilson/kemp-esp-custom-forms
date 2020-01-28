@@ -18,6 +18,11 @@ body {
     background-color: #1c91f2;
 }
 
+.container-fluid {
+    padding-right: initial;
+    padding-left: inherit;
+}
+
 .website-logo {
     display: inline-block;
     top: 50px;
